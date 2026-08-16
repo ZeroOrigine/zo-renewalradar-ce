@@ -11,13 +11,13 @@
   ],
   "qa_score": 179,
   "qa_max": 185,
-  "true_cost": 57.8,
-  "calls": 65,
+  "true_cost": 58.11,
+  "calls": 68,
   "funders": [
     "the founder"
   ],
   "story_url": "https://zeroorigine.com/story/renewalradar-ce",
-  "template_sha": null,
+  "template_sha": "55d66aaa278d",
   "publisher": "ZeroOrigine",
   "publisher_url": "https://zeroorigine.com"
 }
