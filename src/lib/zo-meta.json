@@ -1,4 +1,23 @@
 {
-  "present": false,
-  "_note": "Sentinel. The deploy layer overwrites this file per product with real birth data (name, tagline, born, scores, cost, funders, story_url). While present is false or name is absent, /about returns 404. This file MUST exist so the static import never breaks the build (zeroorigine.com ships the sentinel and gets no About page)."
+  "name": "RenewalRadar CE",
+  "tagline": "Never let a state license go inactive because you lost track of CE.",
+  "description": "State-rule database + personal CE hour tracker + countdown alerts per license, agnostic to which course provider is used.",
+  "born": "2026-08-14T15:15:52.455288+00:00",
+  "research_score": 7.25,
+  "ethics_verdict": "APPROVED",
+  "ethics_score": 8.6,
+  "ethics_concerns": [
+    "Stale regulatory data could cause a user to miss a real deadline while trusting the app."
+  ],
+  "qa_score": 179,
+  "qa_max": 185,
+  "true_cost": 57.8,
+  "calls": 65,
+  "funders": [
+    "the founder"
+  ],
+  "story_url": "https://zeroorigine.com/story/renewalradar-ce",
+  "template_sha": null,
+  "publisher": "ZeroOrigine",
+  "publisher_url": "https://zeroorigine.com"
 }
