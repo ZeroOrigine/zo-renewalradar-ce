@@ -189,7 +189,8 @@ async function sendDigestEmail(to: string, lines: string[]): Promise<{ ok: boole
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from, to: [to], subject, text, html }),
+      // #189: every outbound email carries a working reply path
+      body: JSON.stringify({ from, to: [to], subject, text, html, reply_to: 'reply@zeroorigine.com' }),
     });
     if (!res.ok) return { ok: false, reason: `provider_error_${res.status}` };
     return { ok: true };
