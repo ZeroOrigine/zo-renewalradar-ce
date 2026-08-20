@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import ZoBeacon from '@/components/ZoBeacon';
 import './globals.css';
+import ZoAuthFragmentBridge from '@/components/ZoAuthFragmentBridge'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
       <body className="bg-slate-50 text-slate-900">
+        <ZoAuthFragmentBridge />
         {children}
         <ZoBeacon />
       </body>

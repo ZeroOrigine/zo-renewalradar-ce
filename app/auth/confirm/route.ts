@@ -37,6 +37,14 @@ export async function GET(request: Request) {
     }
   }
 
+  // #1057: recovery links carry the session in the URL FRAGMENT, which this
+  // server route can never see but browsers re-attach across the redirect.
+  // Forward recovery traffic to the reset page; the root-layout fragment
+  // bridge consumes the hash there.
+  const zoRecover = new URL(request.url)
+  if (zoRecover.searchParams.get('type') === 'recovery' || (zoRecover.searchParams.get('next') || '').includes('reset-password')) {
+    return NextResponse.redirect(new URL('/reset-password', request.url))
+  }
   return NextResponse.redirect(
     `${siteUrl}/login?error=${encodeURIComponent(
       'That confirmation link expired or was already used. Sign in, or request a fresh link.'
